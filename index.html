@@ -9,13 +9,12 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('https://cdn.discordapp.com/attachments/1362757639108301022/1494267883029790770/41ed38dd01f000a6b80fe2f85fc643f0.gif?ex=69e1fce9&is=69e0ab69&hm=70709fe91327c60962172909670cbe38f7414fe7cd3bb499da1055abf6348e04&') no-repeat center center fixed;
+      background: url('background.gif') no-repeat center center fixed;
       background-size: cover;
       color: white;
       text-align: center;
     }
 
-    /* overlay escuro */
     body::before {
       content: "";
       position: fixed;
@@ -36,6 +35,20 @@
     .title {
       font-size: 2.5em;
       text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7;
+    }
+
+    /* BANNER */
+    .banner {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      margin: 15px 0;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
+      transition: 0.3s;
+    }
+
+    .banner:hover {
+      transform: scale(1.03);
     }
 
     /* BOTÕES */
@@ -110,6 +123,9 @@
   <h1 class="title">🎙️ Hiroshi</h1>
   <p>Voice Actor</p>
 
+  <!-- BANNER -->
+  <img class="banner" src="https://cdn.discordapp.com/attachments/1362757639108301022/1494282190014644244/bd1eab4a94d00ce7ccade181f5dc5a6d.gif" alt="banner">
+
   <!-- BOTÕES -->
   <div class="tabs">
     <button class="tab-btn" onclick="showTab('home')">🏠 Início</button>
@@ -123,7 +139,7 @@
   <div id="home" class="tab-content active">
     <div class="card">
       <h2>🚨 Comissões Abertas</h2>
-      <p>Faço dublagens com emoção, personalidade e qualidade!</p>
+      <p>Faço dublagens com emoção e personalidade!</p>
       <a class="btn" href="https://discord.com/users/SEU_ID">💬 Me chama no Discord</a>
     </div>
   </div>
@@ -175,7 +191,6 @@
 
 </div>
 
-<!-- SCRIPT -->
 <script>
 function showTab(tabId) {
   const tabs = document.querySelectorAll('.tab-content');
