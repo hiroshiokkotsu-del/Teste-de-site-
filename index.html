@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiroshi | Voice Actor</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('background.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    /* overlay escuro */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 2.5em;
+      text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7;
+    }
+
+    /* BOTÕES */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: #1c1c1c;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab-btn:hover {
+      background: #a855f7;
+      transform: scale(1.1);
+    }
+
+    /* CONTEÚDO */
+    .tab-content {
+      display: none;
+      animation: fade 0.5s ease;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .card {
+      background: rgba(28, 28, 28, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+    }
+
+    a {
+      color: #a855f7;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #a855f7, #9333ea);
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    @keyframes fade {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1 class="title">🎙️ Hiroshi</h1>
+  <p>Voice Actor</p>
+
+  <!-- BOTÕES -->
+  <div class="tabs">
+    <button class="tab-btn" onclick="showTab('home')">🏠 Início</button>
+    <button class="tab-btn" onclick="showTab('precos')">💰 Preços</button>
+    <button class="tab-btn" onclick="showTab('tos')">📜 T.O.S</button>
+    <button class="tab-btn" onclick="showTab('portfolio')">🎧 Portfólio</button>
+    <button class="tab-btn" onclick="showTab('links')">🔗 Links</button>
+  </div>
+
+  <!-- INÍCIO -->
+  <div id="home" class="tab-content active">
+    <div class="card">
+      <h2>🚨 Comissões Abertas</h2>
+      <p>Faço dublagens com emoção, personalidade e qualidade!</p>
+      <a class="btn" href="https://discord.com/users/SEU_ID">💬 Me chama no Discord</a>
+    </div>
+  </div>
+
+  <!-- PREÇOS -->
+  <div id="precos" class="tab-content">
+    <div class="card">
+      <h2>💰 Preços</h2>
+      <p>Frase curta → R$ 3</p>
+      <p>Áudio curto → R$ 5</p>
+      <p>Áudio médio → R$ 10</p>
+      <p>Áudio longo → R$ 15 - R$ 20</p>
+      <br>
+      <p><strong>Extras:</strong></p>
+      <p>+ Interpretação → + R$ 3</p>
+      <p>+ Voz personalizada → + R$ 3</p>
+    </div>
+  </div>
+
+  <!-- TOS -->
+  <div id="tos" class="tab-content">
+    <div class="card">
+      <h2>📜 Termos de Serviço</h2>
+      <p>• Sem conteúdo +18 / NSFW</p>
+      <p>• Pagamento antecipado ou 50/50</p>
+      <p>• Sem reembolso após início</p>
+      <p>• 1 revisão simples inclusa</p>
+    </div>
+  </div>
+
+  <!-- PORTFÓLIO -->
+  <div id="portfolio" class="tab-content">
+    <div class="card">
+      <h2>🎧 Portfólio</h2>
+      <a href="https://youtube.com/@hiroshiokkotsu">YouTube</a>
+      <a href="https://www.tiktok.com/@hirororo5">TikTok</a>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div id="links" class="tab-content">
+    <div class="card">
+      <h2>🔗 Redes</h2>
+      <a href="https://www.instagram.com/hiroshiokkotsu">Instagram</a>
+      <a href="https://x.com/HiroshiOkkotsu">X</a>
+      <a href="https://youtube.com/@hiroshiokkotsu">YouTube</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+function showTab(tabId) {
+  const tabs = document.querySelectorAll('.tab-content');
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  document.getElementById(tabId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
