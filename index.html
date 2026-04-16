@@ -1,202 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hiroshi | Voice Actor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hiroshi | Voice Actor</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('background.gif') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: url('background.gif') center/cover no-repeat fixed;
+  color: #e5d4ff;
+  text-align: center;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
+/* overlay */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 0, 20, 0.85);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-    }
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #a855f7;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(168,85,247,0.7);
+  background: rgba(20, 10, 30, 0.7);
+}
 
-    .title {
-      font-size: 2.5em;
-      text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7;
-    }
+/* TITULO */
+.title {
+  font-size: 3em;
+  color: #d8b4fe;
+  text-shadow: 0 0 15px #a855f7;
+}
 
-    /* BANNER */
-    .banner {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 15px;
-      margin: 15px 0;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
-      transition: 0.3s;
-    }
+.subtitle {
+  margin-bottom: 20px;
+  color: #ccc;
+}
 
-    .banner:hover {
-      transform: scale(1.03);
-    }
+/* MENU */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
 
-    /* BOTÕES */
-    .tabs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 20px 0;
-      flex-wrap: wrap;
-    }
+.menu button {
+  background: transparent;
+  border: 1px solid #a855f7;
+  color: #e5d4ff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .tab-btn {
-      background: #1c1c1c;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.menu button:hover {
+  background: #a855f7;
+  transform: scale(1.1);
+}
 
-    .tab-btn:hover {
-      background: #a855f7;
-      transform: scale(1.1);
-    }
+/* CONTEUDO */
+.section {
+  display: none;
+  animation: fade 0.5s ease;
+}
 
-    /* CONTEÚDO */
-    .tab-content {
-      display: none;
-      animation: fade 0.5s ease;
-    }
+.active {
+  display: block;
+}
 
-    .active {
-      display: block;
-    }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
 
-    .card {
-      background: rgba(28, 28, 28, 0.6);
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
-    }
+/* CARDS */
+.card {
+  background: rgba(30, 20, 50, 0.7);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(168,85,247,0.5);
+}
 
-    a {
-      color: #a855f7;
-      text-decoration: none;
-      display: block;
-      margin: 5px 0;
-    }
+/* BANNER */
+.banner {
+  width: 100%;
+  border-radius: 15px;
+  margin: 15px 0;
+}
 
-    .btn {
-      background: linear-gradient(45deg, #a855f7, #9333ea);
-      padding: 10px;
-      border-radius: 10px;
-      display: inline-block;
-      margin-top: 10px;
-    }
+/* LINKS */
+a {
+  color: #c084fc;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+}
 
-    @keyframes fade {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-  </style>
+/* ANIMAÇÃO */
+@keyframes fade {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <h1 class="title">🎙️ Hiroshi</h1>
-  <p>Voice Actor</p>
+  <div class="title">🎙️ Hiroshi</div>
+  <div class="subtitle">Voice Actor</div>
 
-  <!-- BANNER -->
-  <img class="banner" src="https://cdn.discordapp.com/attachments/1362757639108301022/1494282190014644244/bd1eab4a94d00ce7ccade181f5dc5a6d.gif" alt="banner">
+  <img class="banner" src="https://cdn.discordapp.com/attachments/1362757639108301022/1494282190014644244/bd1eab4a94d00ce7ccade181f5dc5a6d.gif">
 
-  <!-- BOTÕES -->
-  <div class="tabs">
-    <button class="tab-btn" onclick="showTab('home')">🏠 Início</button>
-    <button class="tab-btn" onclick="showTab('precos')">💰 Preços</button>
-    <button class="tab-btn" onclick="showTab('tos')">📜 T.O.S</button>
-    <button class="tab-btn" onclick="showTab('portfolio')">🎧 Portfólio</button>
-    <button class="tab-btn" onclick="showTab('links')">🔗 Links</button>
+  <!-- MENU -->
+  <div class="menu">
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('tos')">T.O.S</button>
+    <button onclick="show('preco')">Preços</button>
+    <button onclick="show('contato')">Contato</button>
   </div>
 
-  <!-- INÍCIO -->
-  <div id="home" class="tab-content active">
-    <div class="card">
-      <h2>🚨 Comissões Abertas</h2>
-      <p>Faço dublagens com emoção e personalidade!</p>
-      <a class="btn" href="https://discord.com/users/SEU_ID">💬 Me chama no Discord</a>
-    </div>
-  </div>
+  <!-- HOME -->
+  <div id="home" class="section active">
+    <div class="grid">
 
-  <!-- PREÇOS -->
-  <div id="precos" class="tab-content">
-    <div class="card">
-      <h2>💰 Preços</h2>
-      <p>Frase curta → R$ 3</p>
-      <p>Áudio curto → R$ 5</p>
-      <p>Áudio médio → R$ 10</p>
-      <p>Áudio longo → R$ 15 - R$ 20</p>
-      <br>
-      <p><strong>Extras:</strong></p>
-      <p>+ Interpretação → + R$ 3</p>
-      <p>+ Voz personalizada → + R$ 3</p>
+      <div class="card">
+        <h3>🚨 Status</h3>
+        <p>Comissões abertas!</p>
+      </div>
+
+      <div class="card">
+        <h2>✨ Bem-vindo</h2>
+        <p>
+          Sou dublador focado em trazer emoção e personalidade
+          para cada personagem. Trabalho com vozes variadas e adaptação.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎧 Sobre</h3>
+        <p>Dublador focado em projetos criativos e anime.</p>
+      </div>
+
     </div>
   </div>
 
   <!-- TOS -->
-  <div id="tos" class="tab-content">
+  <div id="tos" class="section">
     <div class="card">
       <h2>📜 Termos de Serviço</h2>
-      <p>• Sem conteúdo +18 / NSFW</p>
-      <p>• Pagamento antecipado ou 50/50</p>
+      <p>• Sem conteúdo +18</p>
+      <p>• Pagamento antecipado</p>
       <p>• Sem reembolso após início</p>
-      <p>• 1 revisão simples inclusa</p>
     </div>
   </div>
 
-  <!-- PORTFÓLIO -->
-  <div id="portfolio" class="tab-content">
+  <!-- PREÇOS -->
+  <div id="preco" class="section">
     <div class="card">
-      <h2>🎧 Portfólio</h2>
-      <a href="https://youtube.com/@hiroshiokkotsu">YouTube</a>
-      <a href="https://www.tiktok.com/@hirororo5">TikTok</a>
+      <h2>💰 Preços</h2>
+      <p>Frase curta → R$3</p>
+      <p>Áudio curto → R$5</p>
+      <p>Áudio médio → R$10</p>
+      <p>Áudio longo → R$15+</p>
     </div>
   </div>
 
-  <!-- LINKS -->
-  <div id="links" class="tab-content">
+  <!-- CONTATO -->
+  <div id="contato" class="section">
     <div class="card">
-      <h2>🔗 Redes</h2>
+      <h2>📩 Contato</h2>
+      <a href="https://discord.com/users/SEU_ID">Discord</a>
       <a href="https://www.instagram.com/hiroshiokkotsu">Instagram</a>
       <a href="https://x.com/HiroshiOkkotsu">X</a>
-      <a href="https://youtube.com/@hiroshiokkotsu">YouTube</a>
     </div>
   </div>
 
 </div>
 
 <script>
-function showTab(tabId) {
-  const tabs = document.querySelectorAll('.tab-content');
-  tabs.forEach(tab => tab.classList.remove('active'));
-
-  document.getElementById(tabId).classList.add('active');
+function show(id) {
+  document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
 </script>
 
