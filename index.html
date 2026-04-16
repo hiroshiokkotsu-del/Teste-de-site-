@@ -11,7 +11,7 @@
 body {
   margin: 0;
   font-family: "Georgia", serif;
-  background: url('https://cdn.discordapp.com/attachments/1362757639108301022/1494267883029790770/41ed38dd01f000a6b80fe2f85fc643f0.gif?ex=69e1fce9&is=69e0ab69&hm=70709fe91327c60962172909670cbe38f7414fe7cd3bb499da1055abf6348e04&') center/cover no-repeat fixed;
+  background: url('https://cdn.discordapp.com/attachments/1362757639108301022/1494267883029790770/41ed38dd01f000a6b80fe2f85fc643f0.gif') center/cover no-repeat fixed;
   color: #e5d4ff;
 
   display: flex;
@@ -44,16 +44,22 @@ body::before {
   animation: fadeUp 0.8s ease, glowPulse 3s infinite alternate;
 }
 
-/* TITULO */
+/* 🔥 HEADER CENTRALIZADO */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .title {
   font-size: 3em;
   color: #d8b4fe;
   text-shadow: 0 0 15px #a855f7;
+  margin: 0;
 }
 
 .subtitle {
-  margin-bottom: 20px;
   color: #ccc;
+  margin-top: 5px;
 }
 
 /* 🔥 BANNER */
@@ -69,7 +75,7 @@ body::before {
 
 .banner {
   width: 100%;
-  max-height: 250px;
+  height: 120px;
   object-fit: cover;
   border-radius: 15px;
   display: block;
@@ -151,12 +157,8 @@ a {
 }
 
 @keyframes glowPulse {
-  from {
-    box-shadow: 0 0 20px rgba(168,85,247,0.5);
-  }
-  to {
-    box-shadow: 0 0 40px rgba(168,85,247,1);
-  }
+  from { box-shadow: 0 0 20px rgba(168,85,247,0.5); }
+  to { box-shadow: 0 0 40px rgba(168,85,247,1); }
 }
 
 </style>
@@ -166,10 +168,13 @@ a {
 
 <div class="container">
 
-  <div class="title">🎙️ Hiroshi</div>
-  <div class="subtitle">Voice Actor</div>
+  <!-- 🔥 HEADER CENTRALIZADO -->
+  <div class="header">
+    <div class="title">🎙️ Hiroshi</div>
+    <div class="subtitle">Voice Actor</div>
+  </div>
 
-  <!-- 🔥 BANNER ATUALIZADO -->
+  <!-- 🔥 BANNER COM SEU GIF -->
   <div class="banner-box">
     <img class="banner" src="https://cdn.discordapp.com/attachments/1362757639108301022/1494282190014644244/bd1eab4a94d00ce7ccade181f5dc5a6d.gif">
   </div>
