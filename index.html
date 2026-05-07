@@ -1,251 +1,273 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hiroshi | Voice Actor</title>
+/* ===== IMPORTANDO FONTE ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=JetBrains+Mono:wght@300;500&display=swap');
 
-<style>
+/* ===== BODY ===== */
+body{
+    margin:0;
+    padding:0;
+    background:#090011;
+    color:#f1d9ff;
+    font-family:'Cormorant Garamond', serif;
+    overflow-x:hidden;
 
-/* 🔥 BACKGROUND + CENTRALIZAÇÃO */
-body {
-  margin: 0;
-  font-family: "Georgia", serif;
-  background: url('https://cdn.discordapp.com/attachments/1362757639108301022/1494267883029790770/41ed38dd01f000a6b80fe2f85fc643f0.gif?ex=69e1fce9&is=69e0ab69&hm=70709fe91327c60962172909670cbe38f7414fe7cd3bb499da1055abf6348e04&') center/cover no-repeat fixed;
-  color: #e5d4ff;
+    /* Fundo mais suave */
+    background-image:
+    linear-gradient(rgba(8,0,15,0.85), rgba(8,0,15,0.92)),
+    url("background.png");
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 }
 
-/* overlay */
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 0, 20, 0.85);
-  top: 0;
-  left: 0;
-  z-index: -1;
+/* ===== CONTAINER PRINCIPAL ===== */
+.main-box{
+    width:850px;
+    margin:50px auto;
+    padding:25px;
+
+    background:rgba(15, 0, 28, 0.82);
+
+    border:2px solid #9f4dff;
+    border-radius:25px;
+
+    box-shadow:
+    0 0 15px #7b2fff,
+    0 0 40px rgba(123,47,255,0.4);
+
+    backdrop-filter:blur(8px);
 }
 
-.container {
-  max-width: 900px;
-  width: 90%;
-  padding: 20px;
-
-  border: 2px solid #a855f7;
-  border-radius: 20px;
-  background: rgba(20, 10, 30, 0.7);
-
-  animation: fadeUp 0.8s ease, glowPulse 3s infinite alternate;
+/* ===== TOPO ===== */
+.header{
+    text-align:center;
+    margin-bottom:25px;
 }
 
-/* 🔥 HEADER CENTRALIZADO */
-.header {
-  text-align: center;
-  margin-bottom: 10px;
+.header h1{
+    font-size:70px;
+    margin:0;
+
+    text-shadow:
+    0 0 10px #c57cff,
+    0 0 25px #8b3dff;
+
+    letter-spacing:2px;
 }
 
-.title {
-  font-size: 3em;
-  color: #d8b4fe;
-  text-shadow: 0 0 15px #a855f7;
-  margin: 0;
+.subtitle{
+    font-size:22px;
+    opacity:0.8;
+    margin-top:-8px;
+
+    font-family:'JetBrains Mono', monospace;
 }
 
-.subtitle {
-  color: #ccc;
-  margin-top: 5px;
+/* ===== BANNER ===== */
+.banner{
+    width:70%;
+    height:140px;
+
+    margin:20px auto;
+
+    border-radius:25px;
+    border:3px solid #a855ff;
+
+    background:
+    linear-gradient(135deg,
+    rgba(145, 0, 255, 0.4),
+    rgba(0, 0, 0, 0.4)),
+    url("banner.gif");
+
+    background-size:cover;
+    background-position:center;
+
+    box-shadow:
+    0 0 25px #8a2dff;
+
+    position:relative;
+    overflow:hidden;
 }
 
-/* 🔥 BANNER */
-.banner-box {
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 5px;
-  border-radius: 20px;
-  background: linear-gradient(45deg, #a855f7, #9333ea);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+/* brilho animado */
+.banner::before{
+    content:'';
+    position:absolute;
+
+    width:200%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+
+    animation:shine 5s linear infinite;
 }
 
-.banner {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 15px;
-  display: block;
+@keyframes shine{
+    from{
+        transform:translateX(-100%);
+    }
+
+    to{
+        transform:translateX(100%);
+    }
 }
 
-/* MENU */
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+/* ===== BOTÕES ===== */
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+
+    margin-top:25px;
 }
 
-.menu button {
-  background: transparent;
-  border: 1px solid #a855f7;
-  color: #e5d4ff;
-  padding: 10px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
+.navbar a{
+    text-decoration:none;
+
+    color:#f1d9ff;
+
+    padding:10px 22px;
+
+    border-radius:12px;
+    border:1px solid #a855ff;
+
+    background:rgba(30,0,50,0.6);
+
+    transition:0.3s;
+
+    font-family:'JetBrains Mono', monospace;
 }
 
-.menu button:hover {
-  background: #a855f7;
-  transform: scale(1.1);
+.navbar a:hover{
+    transform:translateY(-3px);
+
+    background:#8a2dff;
+
+    box-shadow:
+    0 0 12px #b86eff,
+    0 0 25px #7b2fff;
 }
 
-/* CONTEÚDO */
-.section {
-  display: none;
-  animation: fade 0.5s ease;
+/* ===== CAIXAS ===== */
+.section{
+    margin-top:35px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(20,0,35,0.7);
+
+    border:1px solid rgba(170,90,255,0.5);
+
+    box-shadow:
+    inset 0 0 20px rgba(140,50,255,0.15);
 }
 
-.active {
-  display: block;
+/* ===== TÍTULOS ===== */
+.section h2{
+    font-size:42px;
+
+    margin-top:0;
+
+    text-shadow:0 0 10px #a855ff;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
+/* ===== LINKS ===== */
+.section a{
+    color:#d9b3ff;
+    text-decoration:none;
+
+    transition:0.2s;
 }
 
-/* CARDS */
-.card {
-  background: rgba(30, 20, 50, 0.7);
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(168,85,247,0.5);
+.section a:hover{
+    color:white;
+
+    text-shadow:
+    0 0 8px #c57cff;
 }
 
-/* LINKS */
-a {
-  color: #c084fc;
-  text-decoration: none;
-  display: block;
-  margin: 5px 0;
+/* ===== CARDS DE CONTATO ===== */
+.contact-card{
+    margin-top:15px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:rgba(45,0,70,0.4);
+
+    border:1px solid rgba(180,120,255,0.3);
+
+    transition:0.3s;
 }
 
-/* ANIMAÇÕES */
-@keyframes fade {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
+.contact-card:hover{
+    transform:translateX(5px);
+
+    box-shadow:
+    0 0 12px rgba(180,120,255,0.4);
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+/* ===== STATUS ONLINE ===== */
+.status{
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    background:#1aff95;
+
+    color:black;
+
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px;
+    font-weight:bold;
+
+    box-shadow:
+    0 0 12px #1aff95;
 }
 
-@keyframes glowPulse {
-  from { box-shadow: 0 0 20px rgba(168,85,247,0.5); }
-  to { box-shadow: 0 0 40px rgba(168,85,247,1); }
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+
+    margin-top:40px;
+
+    opacity:0.5;
+
+    font-family:'JetBrains Mono', monospace;
 }
 
-</style>
-</head>
+/* ===== RESPONSIVIDADE ===== */
+@media(max-width:900px){
 
-<body>
+    .main-box{
+        width:90%;
+    }
 
-<div class="container">
+    .banner{
+        width:90%;
+    }
 
-  <!-- 🔥 HEADER CENTRALIZADO -->
-  <div class="header">
-    <div class="title">🎙️ Hiroshi</div>
-    <div class="subtitle">Voice Actor</div>
-  </div>
+    .header h1{
+        font-size:50px;
+    }
 
-  <!-- 🔥 BANNER COM SEU GIF -->
-  <div class="banner-box">
-    <img class="banner" src="https://cdn.discordapp.com/attachments/1362757639108301022/1494282190014644244/bd1eab4a94d00ce7ccade181f5dc5a6d.gif?ex=69e20a3c&is=69e0b8bc&hm=998ff7837c12cf324fbcac63ae28a4a49415f16633e7fe10576640dc39f700bf&">
-  </div>
+    .section h2{
+        font-size:32px;
+    }
 
-  <div class="menu">
-    <button onclick="show('home')">Home</button>
-    <button onclick="show('tos')">T.O.S</button>
-    <button onclick="show('preco')">Preços</button>
-    <button onclick="show('contato')">Contato</button>
-  </div>
-
-  <div id="home" class="section active">
-    <div class="grid">
-
-      <div class="card">
-        <h3>🚨 Status</h3>
-        <p>Comissões abertas!</p>
-      </div>
-
-      <div class="card">
-        <h2>✨ Bem-vindo</h2>
-        <p>Muito obrigado por me escolher para seu projeto! sinta-se livre para me chamar no discord e me fazer perguntas!</p>
-      </div>
-
-      <div class="card">
-        <h3>🎧 Sobre</h3>
-        <p>Dublador focado em projetos criativos e fandubs!</p>
-      </div>
-
-    </div>
-  </div>
-
-  <div id="tos" class="section">
-    <div class="card">
-      <h2>📜 Termos de Serviço</h2>
-      <p>• Sem conteúdo +18</p>
-      <p>• Pagamento antecipado ou 50/50</p>
-      <p>• Sem reembolso após início</p>
-    </div>
-  </div>
-
-  <div id="preco" class="section">
-    <div class="card">
-      <h2>💰 Preços</h2>
-      <p>Frase curta → R$3</p>
-      <p>Áudio curto → R$5</p>
-      <p>Áudio médio → R$10</p>
-      <p>Áudio longo → R$15+</p>
-    </div>
-  </div>
-
-  <div id="contato" class="section">
-    <div class="card">
-      <h2>📩 Contato</h2>
-
-      <a href="https://discord.com/users/SEU_ID">Discord</a>
-      <a href="https://www.instagram.com/hiroshiokkotsu">Instagram</a>
-      <a href="https://x.com/HiroshiOkkotsu">X</a>
-      <a href="https://youtube.com/@hiroshiokkotsu">YouTube</a>
-
-    </div>
-  </div>
-
-</div>
-
-<script>
-function show(id) {
-  document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+    .navbar{
+        flex-wrap:wrap;
+    }
 }
-</script>
-
-</body>
-</html>
